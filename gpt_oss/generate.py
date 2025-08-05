@@ -17,7 +17,7 @@ def main(args):
             generator = TorchGenerator(args.checkpoint, device=device)
         case "triton":
             from gpt_oss.torch.utils import init_distributed
-            from gpt_oss.triton.model import TokenGenerator as TritonGenerator
+            from gpt_oss.triton_impl.model import TokenGenerator as TritonGenerator
             device = init_distributed()
             generator = TritonGenerator(args.checkpoint, context=4096, device=device)
         case "vllm":

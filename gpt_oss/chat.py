@@ -61,7 +61,7 @@ def get_user_input():
 def main(args):
     match args.backend:
         case "triton":
-            from gpt_oss.triton.model import TokenGenerator as TritonGenerator
+            from gpt_oss.triton_impl.model import TokenGenerator as TritonGenerator
             from gpt_oss.torch.utils import init_distributed
             device = init_distributed()
             generator = TritonGenerator(args.checkpoint, args.context, device)
